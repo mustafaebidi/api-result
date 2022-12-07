@@ -3,6 +3,7 @@ require('dotenv').config();
 const port = 4060
 const express = require('express')
 const app = express()
+const path = require('path')
 
 var cors = require('cors')
 
@@ -24,6 +25,11 @@ connectDB()
 app.use(express.json())
 
 app.use(cors(corsOptions))
+
+
+app.use('/', express.static(path.join(__dirname, 'public')))
+
+app.use('/', require('./routes/root'))
 
 //routes
 app.use('/auth',require('./routes/auth'))
