@@ -11,10 +11,18 @@ const connectDB=require("./config/dbCon")
 
 const verifyJWT=require("./middlewares/verifyJWT")
 
+const allowedOrigins = require('./allowedOrigins')
+
+const corsOptions ={
+  origin:'*', 
+  credentials:true,            //access-control-allow-credentials:true
+  optionSuccessStatus:200,
+}
+
 connectDB()
 app.use(express.json())
 
-app.use(cors({origin: '*'}));
+app.use(cors(corsOptions))
 
 //routes
 app.use('/auth',require('./routes/auth'))
