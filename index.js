@@ -19,7 +19,7 @@ app.use(cors({origin: '*'}));
 //routes
 app.use('/auth',require('./routes/auth'))
 
-//app.use(verifyJWT)
+app.use(verifyJWT)
 app.use('/results',require('./routes/result'))
 app.use("/profile",require('./routes/profile'))
 
