@@ -18,7 +18,7 @@ const login=async(req,res)=>{
 
     if(!user){
 
-        return res.status(401).json({msg:'يوجد غلط في البريد الالكتوني او كلمة المرور'})
+        return res.status(401).json({msg:'يوجد خطأ في البريد الالكتوني او كلمة المرور'})
 
     }
 
@@ -37,7 +37,7 @@ const login=async(req,res)=>{
 
     }
 
-    return res.status(401).json({msg:'يوجد غلط في البريد الالكتوني او كلمة المرور'})
+    return res.status(401).json({msg:'يوجد خطأ في البريد الالكتوني او كلمة المرور'})
 
 
 
