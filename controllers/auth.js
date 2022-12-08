@@ -18,7 +18,7 @@ const login=async(req,res)=>{
 
     if(!user){
 
-        return res.status(401).json({msg:'Incorrect email or password'})
+        return res.status(401).json({msg:'يوجد غلط في البريد الالكتوني او كلمة المرور'})
 
     }
 
@@ -37,7 +37,7 @@ const login=async(req,res)=>{
 
     }
 
-    return res.status(401).json({msg:'Incorrect email or password'})
+    return res.status(401).json({msg:'يوجد غلط في البريد الالكتوني او كلمة المرور'})
 
 
 
@@ -56,9 +56,8 @@ const registration=async(req,res,next)=>{
         password:hasedPassword
     });
 
-    console.log(user)
 
-    res.status(201).json({msg:"Successfully Registered"})
+    res.status(201).json({msg:"تم التسجيل بنجاح"})
 
 
 

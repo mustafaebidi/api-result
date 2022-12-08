@@ -41,7 +41,7 @@ const getResultsBySittingNumber=async(req,res)=>{
     const student=await Result.findOne({"studentInfo.sittingNumber":number}).select("-_id").lean()
 
     if(!student){
-        return res.status(404).json({msg:"No Result Found"})
+        return res.status(404).json({msg:"لا توجد نتيجة"})
     }
 
     return res.json({data:student})
@@ -63,7 +63,7 @@ const getResultsBySchool=async(req,res)=>{
     const lenOfReslts=await Result.find({"studentInfo.school":{$regex: regex}}).countDocuments()
 
     if(!lenOfReslts){
-        return res.status(404).json({msg:"No Result Found"})
+        return res.status(404).json({msg:"لا توجد نتيجة"})
     }
 
     let resultsByName= (by && order) 
@@ -91,7 +91,7 @@ const getResultsByAdministration=async(req,res)=>{
     const lenOfReslts=await Result.find({"studentInfo.educationalAdministration":{$regex: regex}}).countDocuments()
 
     if(!lenOfReslts){
-        return res.status(404).json({msg:"No Result Found"})
+        return res.status(404).json({msg:"لا توجد نتيجة"})
     }
 
     let resultsByName= (by && order) 

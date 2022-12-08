@@ -8,7 +8,7 @@ const validatorMiddleware =require("../../middlewares/validatorMiddleware")
 exports.getResultsByName=[
     check('name')
         .notEmpty()
-        .withMessage('name required'),
+        .withMessage('الاسم مطلوب'),
 
     check('sort')
         .optional({checkFalsy: false})
@@ -25,7 +25,7 @@ exports.getResultsByName=[
     check('page')
         .optional({checkFalsy: true})
         .isInt()
-        .withMessage('Write Vaild Data ya khol'),
+        .withMessage('برجاء كتابه بيانات صحيحة'),
 
     validatorMiddleware,
 
@@ -36,7 +36,7 @@ exports.getResultsBySittingNumber=[
         .notEmpty()
         .withMessage('رقم الجلوس او الاسم مطلوب')
         .isInt()
-        .withMessage('Write Vaild Data'),
+        .withMessage('برجاء كتابه بيانات صحيحة'),
 
     validatorMiddleware,
 
@@ -46,7 +46,7 @@ exports.getResultsBySchool=[
 
     check('name')
     .notEmpty()
-    .withMessage('name required'),
+    .withMessage('الاسم مطلوب'),
 
     check('sort')
         .optional({checkFalsy: true})
@@ -74,7 +74,7 @@ exports.getResultsByAdministration=[
 
     check('name')
     .notEmpty()
-    .withMessage('name required'),
+    .withMessage('الاسم مطلوب'),
 
     check('sort')
         .optional({checkFalsy: true})
